@@ -1,5 +1,4 @@
-# --- Utility Functions ---
-
+from movie import Movie
 
 # Function 1: loads movies from a csv file and returns it as objects
 def load_movies(file_name):
