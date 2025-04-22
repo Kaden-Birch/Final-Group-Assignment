@@ -1,0 +1,97 @@
+import os
+
+ID_WIDTH = 3
+TITLE_WIDTH = 25
+DIRECTOR_WIDTH = 22
+GENRE_WIDTH = 10
+AVAIL_WIDTH = 13
+PRICE_WIDTH = 7
+RENTAL_WIDTH = 10
+DELIMITER = ","
+GENRE_NAMES = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance", "Thriller", "Animation", "Documentary", "Fantasy"]
+
+#function 1: loads movies from the file
+def load_movies(filename, id, title, director, genre, available, price, rental_count):
+    if not os.path.exists(filename):
+        print("The catalog file", filename, "is not found")
+        print("Do you want to continue without loading a file (Yes/Y, No/N))?")
+        return -1
+    
+    with open(filename, 'r') as file:
+        for line in file:
+            parts = line.strip().split(DELIMITER)
+            if len(parts) == 7:
+                id.append(parts[0])
+                title.append(parts[1])
+                director.append(parts[2])
+                genre.append(parts[3])
+                available.append(parts[4])
+                price.append(parts[5])
+                rental_count.append(parts[6])
+    
+    return len(id)
+
+#function 2 saving movies to the file
+def save_movies(filename, id, title, director, genre, available, price, rental_count):
+    with open(filename, "w") as file:
+        for i in range(len(id)):
+            file.write(f"{id[i]},{title[i]},{director[i]},{genre[i]},{available[i]},{price[i]},{rental_count[i]}\n")
+
+    print(f"{len(id)} movies saved to {filename}")
+    
+    return len(id)
+
+#function 3: print menu
+def print_menu():
+    print("Movie Library - Main Menu")
+    print("=========================")
+    print(" 1) Search for movies")
+    print(" 2) Rent a movie")
+    print(" 3) Return a movie")
+    print(" 4) Add a movie")
+    print(" 5) Remove a movie")
+    print(" 6) Update movie details")
+    print(" 7) List movies by genre")
+    print(" 8) Find popular movies")
+    print(" 9) Check availability by genre")
+    print(" 10) Display library summary")
+    print(" 0) Exit the system")
+
+    while True:
+        choice = input("Enter your selection: ").strip()
+        if choice in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "0"]:
+            return choice  
+
+#function 4: movie search
+def search_movies(id, title, director, genre, search_term):
+    print(f'Searching for "{search_term}" in title, director or genre...')
+    print(f"\n{'ID':<{ID_WIDTH}}{'Title':<{TITLE_WIDTH}}{'Director':<{DIRECTOR_WIDTH}}{'Genre':<{GENRE_WIDTH}}")
+    print("-" * 70)
+    count = 0
+    for i in range(len(id)):
+        if (search_term.lower() in id[i].lower() or
+            search_term.lower() in title[i].lower() or
+            search_term.lower() in director[i].lower() or
+            search_term.lower() in GENRE_NAMES[genre[i]].lower()):
+            print(f"{id[i]:<{ID_WIDTH}}{title[i]:<{TITLE_WIDTH}}{director[i]:<{DIRECTOR_WIDTH}}{GENRE_NAMES[genre[i]]:<{GENRE_WIDTH}}")
+            count += 1
+    if count == 0:
+        print("No matching movies found.")
+
+#function 5: movie search with id
+def find_movie_by_id(id, movie_id):
+    if movie_id in id:
+        return id.index(movie_id)
+    return -1
+
+#function 6: renting a movie with id
+def rent_movie(movies, movie_id):
+    for movie in movies:
+        if movie.id == movie_id:
+            if movie.available == "TRUE":
+                movie.available = "FALSE"
+                movie.rental_count = str(int(movie.rental_count) + 1)
+                return (f"Movie")
+
+
+
