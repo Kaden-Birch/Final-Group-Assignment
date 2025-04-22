@@ -1,25 +1,53 @@
 # --- Utility Functions ---
-def find_movie_by_id(movies, movie_id):
-    for m in movies:
-        if m.get_id() == movie_id:
-            return m
-    return -1
-
-def get_genre():
-    GENRES = movie.GENRE_NAMES
-    print("\n    Genres")
-    for i in range(len(GENRES)):
-        print("    " + str(i) + ") " + GENRES[i])
-
-    while True:
-        choice = input("    Choose genre(0-9): ")
-        if choice.isdigit():
-            genre = int(choice)
-            if 0 <= genre <= 9:
-                return genre
-        print("    Invalid Genre: Enter a valid genre (0-9)")
 
 
+# Function 1: loads movies from a csv file and returns it as objects
+def load_movies(file_name):
+    movie_list = []
+    try:
+        with open(file_name, 'r') as file:
+            for line in file:
+                data = line.strip().split(',')
+                if len(data) == 7:
+                    m = movie(data[0], data[1], data[2], data[3], data[4].upper(), data[5], data[6])
+                    movie_list.append(m)
+    except Exception:
+        return []
+    return movie_list
+
+# Function 2:  Saves the list of movie objects to a CSV file
+def save_movies(file_name, movies):
+    try:
+        with open(file_name, 'w') as file:
+            for m in movies:
+                file.write(",".join([
+                    m.get_id(), m.get_title(), m.get_director(),
+                    str(m.get_genre()), "TRUE" if m.get_available() else "FALSE",
+                    format(m.get_price(), ".2f"), str(m.get_rental_count())
+                ]) + "\n")
+        return len(movies)
+    except:
+        print("Error saving file.")
+        return 0
+
+# Function 3: displays the main menu and prompts the user for a valid choice
+def print_menu():
+    print("Movie Library - Main Menu")
+    print("=========================")
+    print("1) Search for movies")
+    print("2) Rent a movie")
+    print("3) Return a movie")
+    print("4) Add a movie")
+    print("5) Remove a movie")
+    print("6) Update movie details")
+    print("7) List movies by genre")
+    print("8) Find popular movies")
+    print("9) Check availability by genre")
+    print("10) Display library summary")
+    print("0) Exit the system")
+    return input("Enter your selection: ")
+
+# Function 4: searches for movies that match the search term
 def search_movies(movies, search_term):
     matched = []
     for m in movies:
@@ -29,64 +57,14 @@ def search_movies(movies, search_term):
             matched.append(m)
     return matched
 
-def list_movies_by_genre(movies):
-    genre_index = get_genre()
-    genre = movie.GENRE_NAMES[genre_index]
-    found = False
-    print("\nMovies in genre:", genre)
+# Function 5: searches for movies that match the search term.
+    def find_movie_by_id(movies, movie_id):
     for m in movies:
-        if m.get_genre_name().lower() == genre.lower():
-            print(m)
-            found = True
-    if not found:
-        print("No movies found in this genre.")
+        if m.get_id() == movie_id:
+            return m
+    return -1
 
-def check_availability_by_genre(movies):
-    genre_index = get_genre()
-    genre = movie.GENRE_NAMES[genre_index]
-    found = False
-    print("\nAvailable movies in genre:", genre)
-    for m in movies:
-        if m.get_genre_name().lower() == genre.lower() and m.get_availability() == "Available":
-            print(m)
-            found = True
-    if not found:
-        print("No available movies found in this genre.")
-
-def display_library_summary(movies):
-    total = len(movies)
-    available = sum(1 for m in movies if m.get_availability() == "Available")
-    rented = total - available
-    print("Total movies:", total)
-    print("Available:", available)
-    print("Rented:", rented)
-
-def popular_movies(movies):
-    count_input = input("Enter minimum rental count to filter popular movies: ")
-    while True:
-        try:
-            count = int(count_input)
-            break
-        except:
-            print("Invalid input. Please enter a valid number.")
-            count_input = input("Enter minimum rental count to filter popular movies: ")
-    found = False
-    print("\nMovies Rented {} times or more)".format(count))
-    for m in movies:
-        if m.get_rental_count() >= count:
-            print(m)
-            found = True
-    if not found:
-        print("No movies found with rental count >= {}".format(count))
-
-def print_movies(movies):
-    print("\n{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>10s}{:>14s}".format(
-        "ID", "Title", "Director", "Genre", "Availability", "Price", "Rental Count"))
-    print("-" * 120)
-    for m in movies:
-        print(m)
-
-# --- Core Movie Operations ---
+# Function 6:
 def rent_movie(movies, movie_id):
     movie = find_movie_by_id(movies, movie_id)
     if movie == -1:
@@ -97,6 +75,8 @@ def rent_movie(movies, movie_id):
     else:
         return "'" + movie.get_title() + "' is already rented - cannot be rented again.\n"
 
+
+# Function 7:
 def return_movie(movies, movie_id):
     movie = find_movie_by_id(movies, movie_id)
     if movie == -1:
@@ -107,6 +87,7 @@ def return_movie(movies, movie_id):
     else:
         return "'" + movie.get_title() + "' has not been rented - cannot be returned.\n"
 
+# Function 8:
 def add_movie(movies):
     movie_id = input("Enter movie ID: ")
     if find_movie_by_id(movies, movie_id) != -1:
@@ -126,6 +107,7 @@ def add_movie(movies):
     movies.append(new_movie)
     return "Movie '" + title + "' added to library successfully .\n"
 
+# Function 9:
 def remove_movie(movies):
     movie_id = input("Enter the movie ID to remove: ")
     movie = find_movie_by_id(movies, movie_id)
@@ -135,6 +117,8 @@ def remove_movie(movies):
     movies.remove(movie)
     return "Movie '" + title + "' removed from library successfully.\n"
 
+
+# Function 10:
 def update_movie_details(movies):
     movie_id = input("Enter the movie ID to update: ")
     movie = find_movie_by_id(movies, movie_id)
@@ -166,51 +150,84 @@ def update_movie_details(movies):
 
     return "Movie with ID " + movie.get_id() + "' is updated successfully.\n"
 
+# Function 11:
+def get_genre():
+    GENRES = movie.GENRE_NAMES
+    print("\n    Genres")
+    for i in range(len(GENRES)):
+        print("    " + str(i) + ") " + GENRES[i])
 
-def load_movies(file_name):
-    movie_list = []
-    try:
-        with open(file_name, 'r') as file:
-            for line in file:
-                data = line.strip().split(',')
-                if len(data) == 7:
-                    m = movie(data[0], data[1], data[2], data[3], data[4].upper(), data[5], data[6])
-                    movie_list.append(m)
-    except Exception:
-        return []
-    return movie_list
+    while True:
+        choice = input("    Choose genre(0-9): ")
+        if choice.isdigit():
+            genre = int(choice)
+            if 0 <= genre <= 9:
+                return genre
+        print("    Invalid Genre: Enter a valid genre (0-9)")
 
-def save_movies(file_name, movies):
-    try:
-        with open(file_name, 'w') as file:
-            for m in movies:
-                file.write(",".join([
-                    m.get_id(), m.get_title(), m.get_director(),
-                    str(m.get_genre()), "TRUE" if m.get_available() else "FALSE",
-                    format(m.get_price(), ".2f"), str(m.get_rental_count())
-                ]) + "\n")
-        return len(movies)
-    except:
-        print("Error saving file.")
-        return 0
+# Function 12:
+def list_movies_by_genre(movies):
+    genre_index = get_genre()
+    genre = movie.GENRE_NAMES[genre_index]
+    found = False
+    print("\nMovies in genre:", genre)
+    for m in movies:
+        if m.get_genre_name().lower() == genre.lower():
+            print(m)
+            found = True
+    if not found:
+        print("No movies found in this genre.")
+
+# Function 13:
+def check_availability_by_genre(movies):
+    genre_index = get_genre()
+    genre = movie.GENRE_NAMES[genre_index]
+    found = False
+    print("\nAvailable movies in genre:", genre)
+    for m in movies:
+        if m.get_genre_name().lower() == genre.lower() and m.get_availability() == "Available":
+            print(m)
+            found = True
+    if not found:
+        print("No available movies found in this genre.")
+
+# Function 14:
+def display_library_summary(movies):
+    total = len(movies)
+    available = sum(1 for m in movies if m.get_availability() == "Available")
+    rented = total - available
+    print("Total movies:", total)
+    print("Available:", available)
+    print("Rented:", rented)
+
+# Function 15:
+def popular_movies(movies):
+    count_input = input("Enter minimum rental count to filter popular movies: ")
+    while True:
+        try:
+            count = int(count_input)
+            break
+        except:
+            print("Invalid input. Please enter a valid number.")
+            count_input = input("Enter minimum rental count to filter popular movies: ")
+    found = False
+    print("\nMovies Rented {} times or more)".format(count))
+    for m in movies:
+        if m.get_rental_count() >= count:
+            print(m)
+            found = True
+    if not found:
+        print("No movies found with rental count >= {}".format(count))
+
+# Function 16:
+def print_movies(movies):
+    print("\n{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>10s}{:>14s}".format(
+        "ID", "Title", "Director", "Genre", "Availability", "Price", "Rental Count"))
+    print("-" * 120)
+    for m in movies:
+        print(m)
 
 # --- Main Program ---
-def print_menu():
-    print("Movie Library - Main Menu")
-    print("=========================")
-    print("1) Search for movies")
-    print("2) Rent a movie")
-    print("3) Return a movie")
-    print("4) Add a movie")
-    print("5) Remove a movie")
-    print("6) Update movie details")
-    print("7) List movies by genre")
-    print("8) Find popular movies")
-    print("9) Check availability by genre")
-    print("10) Display library summary")
-    print("0) Exit the system")
-    return input("Enter your selection: ")
-
 def main():
     filename = input("Enter a movie catalog filename: ")
     movies = load_movies(filename)
