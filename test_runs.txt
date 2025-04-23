@@ -1,5 +1,1080 @@
-Enter a movie catalog filename: movies 
-The catalog file "movies" is not found or could not be loaded.
+PS C:\Users\jdrui> & C:/Users/jdrui/AppData/Local/Programs/Python/Python313/python.exe "c:/Users/jdrui/Downloads/final project/classes_group_assignment.py"
+
+Enter a movie catalog filename: movies
+The catalog file "movies" is not found
+
 Do you want to continue without loading a file (Yes/Y, No/N)? NO
 The Movie Library System will not continue...
 Movie Library System Closed Successfully
+PS C:\Users\jdrui> & C:/Users/jdrui/AppData/Local/Programs/Python/Python313/python.exe "c:/Users/jdrui/Downloads/final project/classes_group_assignment.py"
+
+Enter a movie catalog filename: movies2.csv
+The catalog file "movies2.csv" is not found
+
+Do you want to continue without loading a file (Yes/Y, No/N)? y
+The Movie Library System is opened without loading catalog
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 4
+Enter movie ID: 1
+Enter title: The Legend of Tarzan
+Enter director: David Yates
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+Enter price: 5.99
+Movie 'The Legend of Tarzan' added to library successfully .
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 10
+
+Total movies    :        1
+Available movies:        1
+Rented movies   :        0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 0
+
+Would you like to update the catalog (Yes/Y, No/N)? yes
+1 movies have been written to Movie catalog.
+Movie Library System Closed Successfully
+PS C:\Users\jdrui> & C:/Users/jdrui/AppData/Local/Programs/Python/Python313/python.exe "c:/Users/jdrui/Downloads/final project/classes_group_assignment.py"
+
+Enter a movie catalog filename: movies.csv
+The catalog file "movies.csv" successfully loaded 10 movies to the Movie Library System.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: lovely
+Searching for "lovely" in title, director, or genre...
+No matching movies found.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: the
+Searching for "the" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+4         The Matrix                    Lana Wachowski           Sci-Fi      Available           4.99           100
+6         The Shawshank Redemption      Frank Darabont           Drama       Available           4.49           580
+8         The Lord of the Rings         Peter Jackson            Fantasy     Available           8.99            99
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: chris
+Searching for "chris" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+1         Inception                     Christopher Nolan        Sci-Fi      Available           5.99            50
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+3         Interstellar                  Christopher Nolan        Romance     Available           7.99            74
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: act
+Searching for "act" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: in
+Searching for "in" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+1         Inception                     Christopher Nolan        Sci-Fi      Available           5.99            50
+3         Interstellar                  Christopher Nolan        Romance     Available           7.99            74
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+8         The Lord of the Rings         Peter Jackson            Fantasy     Available           8.99            99
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 10
+
+Total movies    :        10
+Available movies:        10
+Rented movies   :        0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 12
+Movie with ID 12 is not found in library.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 9
+'Toy Story' rented successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 9
+'Toy Story' is already rented - cannot be rented again.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 3
+Enter the movie ID to return: 12
+Movie with ID 12 is not found in library.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 3
+Enter the movie ID to return: 7
+'Pulp Fiction' was not rented - cannot be returned.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 3
+Enter the movie ID to return: 9
+'Toy Story' was returned successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 4
+Enter movie ID: 10
+Movie with ID 10 already exists - cannot be added to library
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 4
+Enter movie ID: 11
+Enter title: Flight Risk
+Enter director: Mel Gibson
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+Enter price: 7.99
+Movie 'Flight Risk' added to library successfully .
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: flight
+Searching for "flight" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+11        Flight Risk                   Mel Gibson               Action      Available           7.99             0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 4
+Enter movie ID: 12
+Enter title: Get Out
+Enter director: Jordan Peele
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 3
+Enter price: 3.95
+Movie 'Get Out' added to library successfully .
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: Jordan
+Invalid choice. Please try again.
+Enter your selection: 1
+Enter search term: Jordan
+Searching for "jordan" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+12        Get Out                       Jordan Peele             Horror      Available           3.95             0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 5
+Enter the movie ID to remove: 20
+Movie with ID 20 not found in library - cannot be removed.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 5
+Enter the movie ID to remove: 12
+Movie 'Get Out' has been removed from library successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: Get
+Searching for "get" in title, director, or genre...
+No matching movies found.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 6
+Enter the movie ID to update: 12
+Movie with ID 12 not found in library.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 6
+Enter the movie ID to update: 11
+Leave fields blank to keep current values.
+Enter new title (current: Flight Risk):
+Enter new director (current: Mel Gibson): 
+Enter new genre (current: Action) (Yes/Y, No/N))? NO
+Enter new price (current: 7.99): 6.99
+Movie with ID 11' is updated successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: mel
+Searching for "mel" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+11        Flight Risk                   Mel Gibson               Action      Available           6.99             0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 7
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): -1
+    Invalid Genre: Enter a valid genre (0-9)
+    Choose genre(0-9): 0
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+11        Flight Risk                   Mel Gibson               Action      Available           6.99             0
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 11
+'Flight Risk' rented successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 3
+Enter the movie ID to return: 11
+'Flight Risk' was returned successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 11
+'Flight Risk' rented successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 4
+Enter movie ID: 12
+Enter title: The Legend of Tarzan 
+Enter director: Dave
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 7
+Enter price: 7
+Movie 'The Legend of Tarzan' added to library successfully .
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 7
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+11        Flight Risk                   Mel Gibson               Action      Rented              6.99             2
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 1
+Enter search term: tarzan
+Searching for "tarzan" in title, director, or genre...
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+12        The Legend of Tarzan          Dave                     Animation   Available           7.00             0
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 6
+Enter the movie ID to update: 13
+Movie with ID 13 not found in library.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 6
+Enter the movie ID to update: 12
+Leave fields blank to keep current values.
+Enter new title (current: The Legend of Tarzan):
+Enter new director (current: Dave): David Yates
+Enter new genre (current: Animation) (Yes/Y, No/N))? YES 
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+Enter new price (current: 7.0): 5.98
+Movie with ID 12' is updated successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 7
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+11        Flight Risk                   Mel Gibson               Action      Rented              6.99             2
+12        The Legend of Tarzan          David Yates              Action      Available           5.98             0
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 3
+'Interstellar' rented successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 8
+Enter the minimum number of rentals for the movies you want to view: 100
+
+Movies Rented 100 Times or More
+ID        Title                         Director                 Genre            # Rentals
+-------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action                 499
+4         The Matrix                    Lana Wachowski           Sci-Fi                 100
+6         The Shawshank Redemption      Frank Darabont           Drama                  580
+7         Pulp Fiction                  Quentin Tarantino        Action                 499
+9         Toy Story                     John Lasseter            Animation              334
+10        The Avengers                  Joss Whedon              Action                 150
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 8
+Enter the minimum number of rentals for the movies you want to view: 400
+
+Movies Rented 400 Times or More
+ID        Title                         Director                 Genre            # Rentals
+-------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action                 499
+6         The Shawshank Redemption      Frank Darabont           Drama                  580
+7         Pulp Fiction                  Quentin Tarantino        Action                 499
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 9
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+10        The Avengers                  Joss Whedon              Action      Available           6.49           150
+12        The Legend of Tarzan          David Yates              Action      Available           5.98             0
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 2
+Enter the movie ID to rent: 10
+'The Avengers' rented successfully.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 9
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 0
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+2         The Dark Knight               Christopher Nolan        Action      Available           6.99           499
+7         Pulp Fiction                  Quentin Tarantino        Action      Available           5.49           499
+12        The Legend of Tarzan          David Yates              Action      Available           5.98             0
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 10
+
+Total movies    :        12
+Available movies:        9
+Rented movies   :        3
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 0
+
+Would you like to update the catalog (Yes/Y, No/N)? y
+12 movies have been written to Movie catalog.
+Movie Library System Closed Successfully
+PS C:\Users\jdrui> & C:/Users/jdrui/AppData/Local/Programs/Python/Python313/python.exe "c:/Users/jdrui/Downloads/final project/classes_group_assignment.py"
+
+Enter a movie catalog filename: movies.csv
+The catalog file "movies.csv" successfully loaded 12 movies to the Movie Library System.
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 9
+
+    Genres
+    0) Action
+    1) Comedy
+    2) Drama
+    3) Horror
+    4) Sci-Fi
+    5) Romance
+    6) Thriller
+    7) Animation
+    8) Documentary
+    9) Fantasy
+    Choose genre(0-9): 7
+
+ID        Title                         Director                 Genre       Availability        Price     # Rentals
+--------------------------------------------------------------------------------------------------------------------
+9         Toy Story                     John Lasseter            Animation   Available           3.99           334
+
+
+Movie Library - Main Menu
+=========================
+ 1) Search for movies
+ 2) Rent a movie
+ 3) Return a movie
+ 4) Add a movie
+ 5) Remove a movie
+ 6) Update movie details
+ 7) List movies by genre
+ 8) Find popular movies
+ 9) Check availability by genre
+10) Display library summary
+ 0) Exit the system
+Enter your selection: 0
+
+Would you like to update the catalog (Yes/Y, No/N)? n
+Movie catalog has not been updated
+Movie Library System Closed Successfully
+PS C:\Users\jdrui>
