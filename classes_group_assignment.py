@@ -248,7 +248,7 @@ def main():
     movies = load_movies(filename)
 
     if not movies:
-        print(f'The catalog file "{filename}" is not found or could not be loaded.')
+        print(f'The catalog file "{filename}" is not found or could not be loaded.\n')
         choice = input("Do you want to continue without loading a file (Yes/Y, No/N)? ")
         if choice.lower() not in ["yes", "y"]:
             print("The Movie Library System will not continue...")
