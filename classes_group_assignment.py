@@ -1,4 +1,4 @@
-from movie import Movie
+from movies import Movie
 
 # Function 1: loads movies from a csv file and returns it as objects
 def load_movies(file_name):
@@ -8,7 +8,7 @@ def load_movies(file_name):
             for line in file:
                 data = line.strip().split(',')
                 if len(data) == 7:
-                    m = movie(data[0], data[1], data[2], data[3], data[4].upper(), data[5], data[6])
+                    m = Movie(data[0], data[1], data[2], data[3], data[4].upper(), data[5], data[6])
                     movie_list.append(m)
     except Exception:
         return []
@@ -33,17 +33,17 @@ def save_movies(file_name, movies):
 def print_menu():
     print("Movie Library - Main Menu")
     print("=========================")
-    print("1) Search for movies")
-    print("2) Rent a movie")
-    print("3) Return a movie")
-    print("4) Add a movie")
-    print("5) Remove a movie")
-    print("6) Update movie details")
-    print("7) List movies by genre")
-    print("8) Find popular movies")
-    print("9) Check availability by genre")
+    print(" 1) Search for movies")
+    print(" 2) Rent a movie")
+    print(" 3) Return a movie")
+    print(" 4) Add a movie")
+    print(" 5) Remove a movie")
+    print(" 6) Update movie details")
+    print(" 7) List movies by genre")
+    print(" 8) Find popular movies")
+    print(" 9) Check availability by genre")
     print("10) Display library summary")
-    print("0) Exit the system")
+    print(" 0) Exit the system")
     return input("Enter your selection: ")
 
 # Function 4: searches for movies that match the search term
@@ -57,7 +57,7 @@ def search_movies(movies, search_term):
     return matched
 
 # Function 5: searches for movies that match the search term.
-    def find_movie_by_id(movies, movie_id):
+def find_movie_by_id(movies, movie_id):
     for m in movies:
         if m.get_id() == movie_id:
             return m
@@ -102,7 +102,7 @@ def add_movie(movies):
             valid_price = True
         except:
             print("Invalid price. Please enter a numeric value.")
-    new_movie = movie(movie_id, title, director, genre, True, price, 0)
+    new_movie = Movie(movie_id, title, director, genre, True, price, 0)
     movies.append(new_movie)
     return "Movie '" + title + "' added to library successfully .\n"
 
@@ -151,23 +151,22 @@ def update_movie_details(movies):
 
 # Function 11:
 def get_genre():
-    GENRES = movie.GENRE_NAMES
+    GENRES = Movie.GENRE_NAMES
     print("\n    Genres")
     for i in range(len(GENRES)):
         print("    " + str(i) + ") " + GENRES[i])
 
-    while True:
-        choice = input("    Choose genre(0-9): ")
-        if choice.isdigit():
-            genre = int(choice)
-            if 0 <= genre <= 9:
-                return genre
+    choice = input("    Choose genre(0-9): ")
+    while not (choice.isdigit() and 0 <= int(choice) <= 9):
         print("    Invalid Genre: Enter a valid genre (0-9)")
+        choice = input("    Choose genre(0-9): ")
+
+    return int(choice)
 
 # Function 12:
 def list_movies_by_genre(movies):
     genre_index = get_genre()
-    genre = movie.GENRE_NAMES[genre_index]
+    genre = Movie.GENRE_NAMES[genre_index]
     found = False
     print("\nMovies in genre:", genre)
     for m in movies:
@@ -180,7 +179,7 @@ def list_movies_by_genre(movies):
 # Function 13:
 def check_availability_by_genre(movies):
     genre_index = get_genre()
-    genre = movie.GENRE_NAMES[genre_index]
+    genre = Movie.GENRE_NAMES[genre_index]
     found = False
     print("\nAvailable movies in genre:", genre)
     for m in movies:
@@ -195,9 +194,10 @@ def display_library_summary(movies):
     total = len(movies)
     available = sum(1 for m in movies if m.get_availability() == "Available")
     rented = total - available
-    print("Total movies:", total)
-    print("Available:", available)
-    print("Rented:", rented)
+    print("\nTotal movies    :\t", total)
+    print("Available movies:\t", available)
+    print("Rented movies   :\t", rented,)
+    print()
 
 # Function 15:
 def popular_movies(movies):
@@ -273,10 +273,11 @@ def main():
             check_availability_by_genre(movies)
         elif selection == "10":
             display_library_summary(movies)
+        elif selection == "0":
+            print()
         else:
             print("Invalid selection.\n")
 
-    print("\nExiting the system...")
     choice = input("Would you like to update the catalog (Yes/Y, No/N)? ")
     if choice.lower() == "yes" or choice.lower() == "y":
         written = save_movies(filename, movies)
