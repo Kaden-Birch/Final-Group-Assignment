@@ -168,26 +168,32 @@ def list_movies_by_genre(movies):
     genre_index = get_genre()
     genre = Movie.GENRE_NAMES[genre_index]
     found = False
-    print("\nMovies in genre:", genre)
+    print("\n{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>10s}{:>14s}".format(
+        "ID", "Title", "Director", "Genre", "Availability", "Price", "# Rentals"))
+    print("-" * 116)
     for m in movies:
         if m.get_genre_name().lower() == genre.lower():
             print(m)
             found = True
     if not found:
         print("No movies found in this genre.")
+        print("\n")
 
 # Function 13:
 def check_availability_by_genre(movies):
     genre_index = get_genre()
     genre = Movie.GENRE_NAMES[genre_index]
     found = False
-    print("\nAvailable movies in genre:", genre)
+    print("\n{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>10s}{:>14s}".format(
+        "ID", "Title", "Director", "Genre", "Availability", "Price", "# Rentals"))
+    print("-" * 116)
     for m in movies:
         if m.get_genre_name().lower() == genre.lower() and m.get_availability() == "Available":
             print(m)
             found = True
     if not found:
         print("No available movies found in this genre.")
+    print("\n")
 
 # Function 14:
 def display_library_summary(movies):
@@ -210,21 +216,24 @@ def popular_movies(movies):
             print("Invalid input. Please enter a valid number.")
             count_input = input("Enter minimum rental count to filter popular movies: ")
     found = False
-    print("\nMovies Rented {} times or more)".format(count))
+    print("\nMovies Rented {} times or more".format(count))
+    print("-" * 116)
     for m in movies:
         if m.get_rental_count() >= count:
             print(m)
             found = True
     if not found:
         print("No movies found with rental count >= {}".format(count))
+        print("\n")
 
 # Function 16:
 def print_movies(movies):
     print("\n{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>10s}{:>14s}".format(
-        "ID", "Title", "Director", "Genre", "Availability", "Price", "Rental Count"))
-    print("-" * 120)
+        "ID", "Title", "Director", "Genre", "Availability", "Price", "# Rentals"))
+    print("-" * 116)
     for m in movies:
         print(m)
+    print()
 
 # --- Main Program ---
 def main():
@@ -253,6 +262,7 @@ def main():
                 print_movies(results)
             else:
                 print("No matching movies found.")
+                print()
         elif selection == "2":
             movie_id = input("Enter the movie ID to rent: ")
             print(rent_movie(movies, movie_id))
@@ -276,7 +286,7 @@ def main():
         elif selection == "0":
             print()
         else:
-            print("Invalid selection.\n")
+            print("Invalid choice. Please try again.\n")
 
     choice = input("Would you like to update the catalog (Yes/Y, No/N)? ")
     if choice.lower() == "yes" or choice.lower() == "y":
