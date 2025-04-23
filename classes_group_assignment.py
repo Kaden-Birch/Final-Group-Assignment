@@ -67,7 +67,7 @@ def find_movie_by_id(movies, movie_id):
 def rent_movie(movies, movie_id):
     movie = find_movie_by_id(movies, movie_id)
     if movie == -1:
-        return "Movie with ID " + movie_id + " not found in library.\n"
+        return "Movie with ID " + movie_id + " is not found in library.\n"
     if movie.get_available():
         movie.borrow_movie()
         return "'" + movie.get_title() + "' rented successfully.\n"
@@ -82,9 +82,9 @@ def return_movie(movies, movie_id):
         return "Movie with ID " + movie_id + " not found in library.\n"
     if not movie.get_available():
         movie.return_movie()
-        return "'" + movie.get_title() + "' returned successfully.\n"
+        return "'" + movie.get_title() + "' was returned successfully.\n"
     else:
-        return "'" + movie.get_title() + "' has not been rented - cannot be returned.\n"
+        return "'" + movie.get_title() + "' was not rented - cannot be returned.\n"
 
 # Function 8:
 def add_movie(movies):
@@ -114,7 +114,7 @@ def remove_movie(movies):
         return "Movie with ID " + movie_id + " not found in library - cannot be removed.\n"
     title = movie.get_title()
     movies.remove(movie)
-    return "Movie '" + title + "' removed from library successfully.\n"
+    return "Movie '" + title + "' has been removed from library successfully.\n"
 
 
 # Function 10:
@@ -175,6 +175,7 @@ def list_movies_by_genre(movies):
         if m.get_genre_name().lower() == genre.lower():
             print(m)
             found = True
+    print("\n")
     if not found:
         print("No movies found in this genre.")
         print("\n")
@@ -207,24 +208,30 @@ def display_library_summary(movies):
 
 # Function 15:
 def popular_movies(movies):
-    count_input = input("Enter minimum rental count to filter popular movies: ")
+    count_input = input("Enter the minimum number of rentals for the movies you want to view: ")
     while True:
         try:
             count = int(count_input)
             break
         except:
             print("Invalid input. Please enter a valid number.")
-            count_input = input("Enter minimum rental count to filter popular movies: ")
+            count_input = input("Enter the minimum number of rentals for the movies you want to view: ")
+
     found = False
-    print("\nMovies Rented {} times or more".format(count))
-    print("-" * 116)
+    print("\nMovies Rented {} Times or More".format(count))
+    print("{:<10s}{:<30s}{:<25s}{:<12s}{:>14s}".format(
+        "ID", "Title", "Director", "Genre", "# Rentals"))
+    print("-" * 91)
+    
     for m in movies:
         if m.get_rental_count() >= count:
-            print(m)
+            print("{:<10s}{:<30s}{:<25s}{:<12s}{:>14}".format(
+                m.get_id(), m.get_title(), m.get_director(),
+                m.get_genre_name(), m.get_rental_count()))
             found = True
     if not found:
         print("No movies found with rental count >= {}".format(count))
-        print("\n")
+    print("")
 
 # Function 16:
 def print_movies(movies):
@@ -252,12 +259,17 @@ def main():
 
 
     selection = ""
+    valid_selection = True
     while selection != "0":
-        selection = print_menu()
+        if valid_selection:
+            selection = print_menu()
+        if valid_selection == False:
+            selection = input("Enter your selection: ")
         if selection == "1":
             term = input("Enter search term: ")
-            print(f'Searching for "{term}" in title, director, or genre...')
+            print(f'Searching for "{term.lower()}" in title, director, or genre...')
             results = search_movies(movies, term)
+            valid_selection = True
             if results:
                 print_movies(results)
             else:
@@ -266,27 +278,37 @@ def main():
         elif selection == "2":
             movie_id = input("Enter the movie ID to rent: ")
             print(rent_movie(movies, movie_id))
+            valid_selection = True
         elif selection == "3":
             movie_id = input("Enter the movie ID to return: ")
             print(return_movie(movies, movie_id))
+            valid_selection = True
         elif selection == "4":
             print(add_movie(movies))
+            valid_selection = True
         elif selection == "5":
             print(remove_movie(movies))
-        elif selection == "6":
+        elif selection == "6":    
             print(update_movie_details(movies))
+            valid_selection = True
         elif selection == "7":
             list_movies_by_genre(movies)
+            valid_selection = True
         elif selection == "8":
             popular_movies(movies)
+            valid_selection = True
         elif selection == "9":
             check_availability_by_genre(movies)
+            valid_selection = True
         elif selection == "10":
             display_library_summary(movies)
+            valid_selection = True
         elif selection == "0":
             print()
+            valid_selection = True
         else:
-            print("Invalid choice. Please try again.\n")
+            print("Invalid choice. Please try again.")
+            valid_selection = False
 
     choice = input("Would you like to update the catalog (Yes/Y, No/N)? ")
     if choice.lower() == "yes" or choice.lower() == "y":
