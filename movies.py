@@ -1,4 +1,4 @@
-class movie:
+class Movie:
     GENRE_NAMES = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi",
                    "Romance", "Thriller", "Animation", "Documentary", "Fantasy"]
 
@@ -20,8 +20,8 @@ class movie:
     def get_rental_count(self): return self.rental_count
 
     def get_genre_name(self):
-        if 0 <= self.genre < len(movie.GENRE_NAMES):
-            return movie.GENRE_NAMES[self.genre]
+        if 0 <= self.genre < len(Movie.GENRE_NAMES):
+            return Movie.GENRE_NAMES[self.genre]
         return "Unknown"
 
     def get_availability(self):
@@ -41,6 +41,6 @@ class movie:
         self.available = True
 
     def __str__(self):
-        return "{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}${:>8.2f}{:>10}".format(
+        return "{:<10s}{:<30s}{:<25s}{:<12s}{:<15s}{:>9.2f}{:>14}".format(
             self.id, self.title, self.director, self.get_genre_name(),
             self.get_availability(), self.price, self.rental_count)
