@@ -244,7 +244,7 @@ def print_movies(movies):
 
 # --- Main Program ---
 def main():
-    filename = input("Enter a movie catalog filename: ")
+    filename = input("\nEnter a movie catalog filename: ")
     movies = load_movies(filename)
 
     if not movies:
