@@ -10,36 +10,41 @@ RENTAL_WIDTH = 10
 DELIMITER = ","
 GENRE_NAMES = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance", "Thriller", "Animation", "Documentary", "Fantasy"]
 
-#function 1: loads movies from the file
-def load_movies(filename, id, title, director, genre, available, price, rental_count):
+# Function 1: loads movies from a csv file and returns it as objects
+import os
+
+def load_movies(filename):
+    movie_list = []
     if not os.path.exists(filename):
         print("The catalog file", filename, "is not found")
-        print("Do you want to continue without loading a file (Yes/Y, No/N))?")
-        return -1
-    
+        print("Do you want to continue without loading a file (Yes/Y, No/N)?")
+        return []
+
     with open(filename, 'r') as file:
         for line in file:
-            parts = line.strip().split(DELIMITER)
+            parts = line.strip().split(',')
             if len(parts) == 7:
-                id.append(parts[0])
-                title.append(parts[1])
-                director.append(parts[2])
-                genre.append(parts[3])
-                available.append(parts[4])
-                price.append(parts[5])
-                rental_count.append(parts[6])
-    
-    return len(id)
+                m = Movie(parts[0], parts[1], parts[2], parts[3], parts[4].upper(), parts[5], parts[6])
+                movie_list.append(m)
 
-#function 2 saving movies to the file
-def save_movies(filename, id, title, director, genre, available, price, rental_count):
+    return movie_list
+
+# Function 2:  
+def save_movies(filename, movies):
     with open(filename, "w") as file:
-        for i in range(len(id)):
-            file.write(f"{id[i]},{title[i]},{director[i]},{genre[i]},{available[i]},{price[i]},{rental_count[i]}\n")
-
-    print(f"{len(id)} movies saved to {filename}")
+        for m in movies:
+            file.write(",".join([
+                m.get_id(), 
+                m.get_title(), 
+                m.get_director(),
+                m.get_genre(),
+                "TRUE" if m.get_available() else "FALSE",
+                format(m.get_price(), ".2f"), 
+                str(m.get_rental_count())
+            ]) + "\n")
     
-    return len(id)
+    print(f"{len(movies)} movies saved to {filename}")
+    return len(movies)
 
 #function 3: print menu
 def print_menu():
