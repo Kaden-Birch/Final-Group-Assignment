@@ -1,1 +1,5 @@
-
+Enter a movie catalog filename: movies 
+The catalog file "movies" is not found or could not be loaded.
+Do you want to continue without loading a file (Yes/Y, No/N)? NO
+The Movie Library System will not continue...
+Movie Library System Closed Successfully
