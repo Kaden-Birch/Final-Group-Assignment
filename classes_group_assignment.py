@@ -1,7 +1,7 @@
 from movies import Movie
 
 # Function 1: loads movies from a csv file and returns it as objects
-ef load_movies(filename):
+def load_movies(filename):
     movie_list = []
     if not os.path.exists(filename):
         print("The catalog file", filename, "is not found")
