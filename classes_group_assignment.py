@@ -1,33 +1,38 @@
 from movies import Movie
 
 # Function 1: loads movies from a csv file and returns it as objects
-def load_movies(file_name):
+ef load_movies(filename):
     movie_list = []
-    try:
-        with open(file_name, 'r') as file:
-            for line in file:
-                data = line.strip().split(',')
-                if len(data) == 7:
-                    m = Movie(data[0], data[1], data[2], data[3], data[4].upper(), data[5], data[6])
-                    movie_list.append(m)
-    except Exception:
+    if not os.path.exists(filename):
+        print("The catalog file", filename, "is not found")
+        print("Do you want to continue without loading a file (Yes/Y, No/N)?")
         return []
+
+    with open(filename, 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 7:
+                m = Movie(parts[0], parts[1], parts[2], parts[3], parts[4].upper(), parts[5], parts[6])
+                movie_list.append(m)
+
     return movie_list
 
-# Function 2:  Saves the list of movie objects to a CSV file
-def save_movies(file_name, movies):
-    try:
-        with open(file_name, 'w') as file:
-            for m in movies:
-                file.write(",".join([
-                    m.get_id(), m.get_title(), m.get_director(),
-                    str(m.get_genre()), "TRUE" if m.get_available() else "FALSE",
-                    format(m.get_price(), ".2f"), str(m.get_rental_count())
-                ]) + "\n")
-        return len(movies)
-    except:
-        print("Error saving file.")
-        return 0
+# Function 2:  
+def save_movies(filename, movies):
+    with open(filename, "w") as file:
+        for m in movies:
+            file.write(",".join([
+                m.get_id(), 
+                m.get_title(), 
+                m.get_director(),
+                m.get_genre(),
+                "TRUE" if m.get_available() else "FALSE",
+                format(m.get_price(), ".2f"), 
+                str(m.get_rental_count())
+            ]) + "\n")
+    
+    print(f"{len(movies)} movies saved to {filename}")
+    return len(movies)
 
 # Function 3: displays the main menu and prompts the user for a valid choice
 def print_menu():
