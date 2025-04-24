@@ -1,10 +1,12 @@
-1,Inception,Christopher Nolan,4,True,5.99,50
-2,The Dark Knight,Christopher Nolan,0,True,6.99,499
-3,Interstellar,Christopher Nolan,5,True,7.99,74
-4,The Matrix,Lana Wachowski,4,True,4.99,100
-5,Forrest Gump,Robert Zemeckis,2,True,3.99,0
-6,The Shawshank Redemption,Frank Darabont,2,True,4.49,580
-7,Pulp Fiction,Quentin Tarantino,0,True,5.49,499
-8,The Lord of the Rings,Peter Jackson,9,True,8.99,99
-9,Toy Story,John Lasseter,7,True,3.99,333
-10,The Avengers,Joss Whedon,0,True,6.49,150
+1,Inception,Christopher Nolan,4,TRUE,5.99,50
+2,The Dark Knight,Christopher Nolan,0,TRUE,6.99,499
+3,Interstellar,Christopher Nolan,5,FALSE,7.99,75
+4,The Matrix,Lana Wachowski,4,TRUE,4.99,100
+5,Forrest Gump,Robert Zemeckis,2,TRUE,3.99,0
+6,The Shawshank Redemption,Frank Darabont,2,TRUE,4.49,580
+7,Pulp Fiction,Quentin Tarantino,0,TRUE,5.49,499
+8,The Lord of the Rings,Peter Jackson,9,TRUE,8.99,99
+9,Toy Story,John Lasseter,7,TRUE,3.99,334
+10,The Avengers,Joss Whedon,0,FALSE,6.49,151
+11,Flight Risk,Mel Gibson,0,FALSE,6.99,2
+12,The Legend of Tarzan,David Yates,0,TRUE,5.98,0
