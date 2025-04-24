@@ -99,14 +99,12 @@ def add_movie(movies):
     title = input("Enter title: ")
     director = input("Enter director: ")
     genre = get_genre()
-    valid_price = False
-    while not valid_price:
+    while True:
         price_input = input("Enter price: ")
-        try:
+        if price_input.replace('.', '', 1).isdigit():
             price = float(price_input)
-            valid_price = True
-        except:
-            print("Invalid price. Please enter a numeric value.")
+            break
+        print("Invalid price. Please enter a numeric value.")
     new_movie = Movie(movie_id, title, director, genre, True, price, 0)
     movies.append(new_movie)
     return "Movie '" + title + "' added to library successfully .\n"
@@ -214,13 +212,12 @@ def display_library_summary(movies):
 # Function 15:
 def popular_movies(movies):
     count_input = input("Enter the minimum number of rentals for the movies you want to view: ")
-    while True:
-        try:
-            count = int(count_input)
-            break
-        except:
-            print("Invalid input. Please enter a valid number.")
-            count_input = input("Enter the minimum number of rentals for the movies you want to view: ")
+    
+    while not count_input.isdigit():
+        print("Invalid input. Please enter a valid number.")
+        count_input = input("Enter the minimum number of rentals for the movies you want to view: ")
+
+    count = int(count_input)
 
     found = False
     print("\nMovies Rented {} Times or More".format(count))
